@@ -151,7 +151,11 @@ public class SceneController implements Initializable, ChangeListener {
                     NodeFX circle = new NodeFX(mouseEvent.getX(), mouseEvent.getY(), 1.2, String.valueOf(nNode));
 
                     canvasGroup.getChildren().add(circle);
-
+                    circle.setOnMousePressed(mouseHandler);
+                    circle.setOnMouseReleased(mouseHandler);
+                    circle.setOnMouseDragged(mouseHandler);
+                    circle.setOnMouseExited(mouseHandler);
+                    circle.setOnMouseEntered(mouseHandler);
                     ScaleTransition tr = new ScaleTransition(Duration.millis(100), circle);
                     tr.setByX(10f);
                     tr.setByY(10f);
