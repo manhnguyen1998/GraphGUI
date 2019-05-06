@@ -1,7 +1,6 @@
 package application;
 
 import javafx.scene.control.Label;
-import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
 
 public class Edge {

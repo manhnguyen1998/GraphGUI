@@ -46,7 +46,7 @@ public class SceneController implements Initializable, ChangeListener {
     @FXML
     private Label weight, sourceText = new Label("Source");
     @FXML
-    private Button clear_button, resetButton,cancel,about,help;
+    private Button clear_button, resetButton, cancel, about, help;
 
     @FXML
     private Pane canvasGroup, viewer;
@@ -109,7 +109,7 @@ public class SceneController implements Initializable, ChangeListener {
             public void handle(ActionEvent event) {
                 Label secondLabel = new Label("Project OOLT Spring 20182: \n"
                         + "\t Phung Thanh Cong - 20160500\n"
-                        +"\t Nguyen Huu Manh - 20166428");
+                        + "\t Nguyen Huu Manh - 20166428");
 
                 StackPane secondaryLayout = new StackPane();
                 secondaryLayout.getChildren().add(secondLabel);
@@ -122,7 +122,6 @@ public class SceneController implements Initializable, ChangeListener {
                 newWindow.setScene(secondScene);
 
                 newWindow.initModality(Modality.WINDOW_MODAL);
-
 
 
                 newWindow.show();
@@ -145,7 +144,6 @@ public class SceneController implements Initializable, ChangeListener {
 
 
                 newWindow.initModality(Modality.WINDOW_MODAL);
-
 
 
                 newWindow.show();
@@ -275,10 +273,6 @@ public class SceneController implements Initializable, ChangeListener {
                             Edge temp = null;
                             if (undirected) {
                                 temp = new Edge(selectedNode.node, circle.node, Integer.valueOf(weight.getText()), edgeLine, weight);
-//                                if (weighted) {
-//                                    mstEdges.add(temp);
-//                                }
-
                                 selectedNode.node.adjacents.add(new Edge(selectedNode.node, circle.node, Double.valueOf(weight.getText()), edgeLine, weight));
                                 circle.node.adjacents.add(new Edge(circle.node, selectedNode.node, Double.valueOf(weight.getText()), edgeLine, weight));
                                 edges.add(edgeLine);
@@ -517,8 +511,6 @@ public class SceneController implements Initializable, ChangeListener {
         Node node;
         Point point;
         Label distance = new Label("Dist. : INFINITY");
-        Label visitTime = new Label("Visit : 0");
-        Label lowTime = new Label("Low : 0");
         Label id;
         boolean isSelected = false;
 
@@ -784,8 +776,7 @@ public class SceneController implements Initializable, ChangeListener {
                             v.minDistance = source.minDistance + 1;
                             v.visited = true;
                             v.previous = source;
-//                        v.circle.distance.setText("Dist. : " + v.minDistance);
-                            //<editor-fold defaultstate="collapsed" desc="Change Edge colors">
+
                             if (undirected) {
                                 StrokeTransition ftEdge = new StrokeTransition(Duration.millis(time), e.line);
                                 ftEdge.setToValue(Color.FORESTGREEN);
@@ -795,10 +786,8 @@ public class SceneController implements Initializable, ChangeListener {
                                 ftEdge.setToValue(Color.FORESTGREEN);
                                 st.getChildren().add(ftEdge);
                             }
-                            //</editor-fold>
                             DFSRecursion(v, level + 1);
-                            //<editor-fold defaultstate="collapsed" desc="Animation Control">
-                            //<editor-fold defaultstate="collapsed" desc="Change Edge colors">
+
                             if (undirected) {
                                 StrokeTransition ftEdge = new StrokeTransition(Duration.millis(time), e.line);
                                 ftEdge.setToValue(Color.BLUEVIOLET);
@@ -808,7 +797,6 @@ public class SceneController implements Initializable, ChangeListener {
                                 ftEdge.setToValue(Color.BLUEVIOLET);
                                 st.getChildren().add(ftEdge);
                             }
-                            //</editor-fold>
                             FillTransition ft1 = new FillTransition(Duration.millis(time), v.circle);
                             ft1.setToValue(Color.BLUEVIOLET);
                             ft1.onFinishedProperty();
@@ -816,7 +804,6 @@ public class SceneController implements Initializable, ChangeListener {
                                 v.circle.distance.setText("Dist. : " + v.minDistance);
                             });
                             st.getChildren().add(ft1);
-                            //</editor-fold>
                         }
                     }
                 }
