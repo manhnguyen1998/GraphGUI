@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59df93ca-e924-41c7-ae5d-3118de1dc0ab" name="Default Changelist" comment="Update Algorithm and Button">
+    <list default="true" id="59df93ca-e924-41c7-ae5d-3118de1dc0ab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/META-INF/Graph.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/Panel1Controller$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/Panel1Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/RightClickMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/Scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/Scene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/SceneController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/SceneController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/SceneController$NodeFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/SceneController$NodeFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/SceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/SceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/application.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/ex.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/res/play_arrow_black_48x48.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/Scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Scene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/SceneController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,10 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/application/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="136">
               <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -39,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/Scene.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="170">
+              <caret line="10" column="131" selection-start-line="10" selection-start-column="131" selection-end-line="10" selection-end-column="131" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -52,13 +63,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/SceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="86" column="11" lean-forward="true" selection-start-line="86" selection-start-column="11" selection-end-line="86" selection-end-column="11" />
+            <state relative-caret-position="1298">
+              <caret line="152" column="11" selection-start-line="152" selection-start-column="11" selection-end-line="152" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#32856#32922#0" expanded="true" />
-                <element signature="e#33661#33726#0" expanded="true" />
-                <element signature="e#33755#33821#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,11 +130,11 @@
         <option value="$PROJECT_DIR$/src/application/Panel1Controller.java" />
         <option value="$PROJECT_DIR$/src/application/Arrow.java" />
         <option value="$PROJECT_DIR$/src/application/Edge.java" />
-        <option value="$PROJECT_DIR$/src/application/Main.java" />
         <option value="$PROJECT_DIR$/src/application/Node.java" />
         <option value="$PROJECT_DIR$/src/application/RightClickMenu.java" />
-        <option value="$PROJECT_DIR$/src/application/SceneController.java" />
+        <option value="$PROJECT_DIR$/src/application/Main.java" />
         <option value="$PROJECT_DIR$/src/application/Scene.fxml" />
+        <option value="$PROJECT_DIR$/src/application/SceneController.java" />
       </list>
     </option>
   </component>
@@ -140,6 +148,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -162,14 +172,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556645833169" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557134991362" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../GraphProject-master/GraphProject-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -225,7 +233,8 @@
       <workItem from="1556634348974" duration="8298000" />
       <workItem from="1556645583077" duration="358000" />
       <workItem from="1556676613469" duration="2550000" />
-      <workItem from="1557025312386" duration="2060000" />
+      <workItem from="1557025312386" duration="3646000" />
+      <workItem from="1557134490884" duration="498000" />
     </task>
     <task id="LOCAL-00001" summary="Update Algorithm and Button">
       <created>1557026993510</created>
@@ -241,11 +250,39 @@
       <option name="project" value="LOCAL" />
       <updated>1557027161108</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update GUI">
+      <created>1557027401024</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557027401024</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update GUI">
+      <created>1557027727667</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1557027727667</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update Main">
+      <created>1557027749140</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1557027749141</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update Mouse Handle">
+      <created>1557028914658</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1557028914658</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28560000" />
+    <option name="totallyTimeSpent" value="30644000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -256,16 +293,16 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.16641453" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.19667171" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="1" visible="true" weight="0.3236715" />
+      <window_info anchor="bottom" id="Version Control" order="1" weight="0.3236715" />
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.33977455" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.33977455" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.3993559" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="10" />
@@ -310,28 +347,36 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update Algorithm and Button" />
     <MESSAGE value="Delete File" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete File" />
+    <MESSAGE value="Update GUI" />
+    <MESSAGE value="Update Main" />
+    <MESSAGE value="Update Mouse Handle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Mouse Handle" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/application/Panel1.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/application/application.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/application.css" />
     <entry file="file://$PROJECT_DIR$/src/application/ToggleSwitch.java" />
-    <entry file="file://$PROJECT_DIR$/src/application/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/ex.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/application/RightClickMenu.java" />
+    <entry file="file://$PROJECT_DIR$/src/application/Panel1Controller.java" />
     <entry file="file://$PROJECT_DIR$/src/application/Arrow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -342,23 +387,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/ex.fxml">
+    <entry file="file://$PROJECT_DIR$/src/application/Scene.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
+        <state relative-caret-position="170">
+          <caret line="10" column="131" selection-start-line="10" selection-start-column="131" selection-end-line="10" selection-end-column="131" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/RightClickMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/javafx.controls/javafx/scene/control/ContextMenu.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -387,37 +422,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/Panel1Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="134" column="13" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#7266#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/SceneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="86" column="11" lean-forward="true" selection-start-line="86" selection-start-column="11" selection-end-line="86" selection-end-column="11" />
+        <state relative-caret-position="1298">
+          <caret line="152" column="11" selection-start-line="152" selection-start-column="11" selection-end-line="152" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#32856#32922#0" expanded="true" />
-            <element signature="e#33661#33726#0" expanded="true" />
-            <element signature="e#33755#33821#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/Scene.fxml">
+    <entry file="file://$PROJECT_DIR$/src/application/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
   </component>
   <component name="masterDetails">

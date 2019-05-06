@@ -1,6 +1,7 @@
 package application;
 
 import javafx.animation.*;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -8,6 +9,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.*;
@@ -15,10 +17,13 @@ import javafx.scene.effect.BlendMode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.awt.*;
@@ -41,7 +46,7 @@ public class SceneController implements Initializable, ChangeListener {
     @FXML
     private Label weight, sourceText = new Label("Source");
     @FXML
-    private Button clear_button, resetButton;
+    private Button clear_button, resetButton,cancel,about,help;
 
     @FXML
     private Pane canvasGroup, viewer;
@@ -54,7 +59,7 @@ public class SceneController implements Initializable, ChangeListener {
 
     List<NodeFX> circles = new ArrayList<>();
     List<Shape> edges = new ArrayList<>();
-    List<Label> distances = new ArrayList<Label>(), visitTime = new ArrayList<Label>(), lowTime = new ArrayList<Label>();
+    List<Label> distances = new ArrayList<Label>();
 
     List<Edge> realEdges = new ArrayList<>();
     boolean menuBool = false, calculate = false, calculated = false, addNode = true, addEdge = false;
@@ -98,6 +103,54 @@ public class SceneController implements Initializable, ChangeListener {
         if (unweighted) {
             dijistra_button.setDisable(true);
         }
+        cancel.setOnAction(e -> Platform.exit());
+        about.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Label secondLabel = new Label("Project OOLT Spring 20182: \n"
+                        + "\t Phung Thanh Cong - 20160500\n"
+                        +"\t Nguyen Huu Manh - 20166428");
+
+                StackPane secondaryLayout = new StackPane();
+                secondaryLayout.getChildren().add(secondLabel);
+
+                Scene secondScene = new Scene(secondaryLayout, 400, 200);
+
+
+                Stage newWindow = new Stage();
+                newWindow.setTitle("About");
+                newWindow.setScene(secondScene);
+
+                newWindow.initModality(Modality.WINDOW_MODAL);
+
+
+
+                newWindow.show();
+            }
+
+        });
+        help.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Label secondLabel = new Label("Select type graph -> Add node -> Add Edge -> Select algorithms");
+                StackPane secondaryLayout = new StackPane();
+                secondaryLayout.getChildren().add(secondLabel);
+
+                Scene secondScene = new Scene(secondaryLayout, 400, 200);
+
+
+                Stage newWindow = new Stage();
+                newWindow.setTitle("Help");
+                newWindow.setScene(secondScene);
+
+
+                newWindow.initModality(Modality.WINDOW_MODAL);
+
+
+
+                newWindow.show();
+            }
+        });
 
         slider.setMin(10);
         slider.setMax(1000);
