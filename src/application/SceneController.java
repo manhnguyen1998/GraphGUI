@@ -62,39 +62,43 @@ public class SceneController implements Initializable, ChangeListener {
     List<Label> distances = new ArrayList<Label>();
 
     List<Edge> realEdges = new ArrayList<>();
-    boolean menuBool = false, calculate = false, calculated = false, addNode = true, addEdge = false;
+    boolean calculate = false, calculated = false, addNode = true, addEdge = false;
     int nNode = 0, time = 500;
     public SequentialTransition st;
     Algorithm algo = new Algorithm();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        directButton.setSelected(directed);
-        undirectButton.setSelected(weighted);
-        weighButton.setSelected(undirected);
-        unweighButton.setSelected(unweighted);
         ResetHandle(null);
-        directButton.setOnAction(e -> {
-            directed = true;
-            undirected = false;
-            System.out.println("dButton");
-        });
-        undirectButton.setOnAction(e -> {
-            directed = false;
-            undirected = true;
-            System.out.println("udButton");
-        });
-        weighButton.setOnAction(e -> {
-            weighted = true;
-            unweighted = false;
-            System.out.println("wButton");
-        });
-        unweighButton.setOnAction(e -> {
-            weighted = false;
-            unweighted = true;
-            System.out.println("uwButton");
-        });
+        try {
+            directButton.setSelected(directed);
+            undirectButton.setSelected(weighted);
+            weighButton.setSelected(undirected);
+            unweighButton.setSelected(unweighted);
+
+            directButton.setOnAction(e -> {
+                directed = true;
+                undirected = false;
+                System.out.println("dButton");
+            });
+            undirectButton.setOnAction(e -> {
+                directed = false;
+                undirected = true;
+                System.out.println("udButton");
+            });
+            weighButton.setOnAction(e -> {
+                weighted = true;
+                unweighted = false;
+                System.out.println("wButton");
+            });
+            unweighButton.setOnAction(e -> {
+                weighted = false;
+                unweighted = true;
+                System.out.println("uwButton");
+            });
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         if (weighted) {
             bfs_button.setDisable(true);
             dfs_button.setDisable(true);
@@ -193,11 +197,6 @@ public class SceneController implements Initializable, ChangeListener {
             }
             if (!mouseEvent.getSource().equals(canvasGroup)) {
                 if (mouseEvent.getEventType() == MouseEvent.MOUSE_RELEASED && mouseEvent.getButton() == MouseButton.PRIMARY) {
-                    if (menuBool == true) {
-                        System.out.println("here" + mouseEvent.getEventType());
-                        menuBool = false;
-                        return;
-                    }
                     nNode++;
                     NodeFX circle = new NodeFX(mouseEvent.getX(), mouseEvent.getY(), 1.2, String.valueOf(nNode));
 
@@ -239,53 +238,57 @@ public class SceneController implements Initializable, ChangeListener {
                             weight = new Label();
                             System.out.println("Adding Edge");
                             //Adds edge
-                            if (undirected) {
-                                edgeLine = new Line(selectedNode.point.x, selectedNode.point.y, circle.point.x, circle.point.y);
-                                canvasGroup.getChildren().add(edgeLine);
-                                edgeLine.setId("line");
-                            } else if (directed) {
-                                arrow = new Arrow(selectedNode.point.x, selectedNode.point.y, circle.point.x, circle.point.y);
-                                canvasGroup.getChildren().add(arrow);
-                                arrow.setId("arrow");
-                            }
-
-                            //Adds weight
-                            if (weighted) {
-                                weight.setLayoutX(((selectedNode.point.x) + (circle.point.x)) / 2);
-                                weight.setLayoutY(((selectedNode.point.y) + (circle.point.y)) / 2);
-
-                                TextInputDialog dialog = new TextInputDialog("0");
-                                dialog.setTitle(null);
-                                dialog.setHeaderText("Enter Weight of the Edge :");
-                                dialog.setContentText(null);
-
-                                Optional<String> result = dialog.showAndWait();
-                                if (result.isPresent()) {
-                                    weight.setText(result.get());
-                                } else {
-                                    weight.setText("0");
+                            try {
+                                if (undirected) {
+                                    edgeLine = new Line(selectedNode.point.x, selectedNode.point.y, circle.point.x, circle.point.y);
+                                    canvasGroup.getChildren().add(edgeLine);
+                                    edgeLine.setId("line");
+                                } else if (directed) {
+                                    arrow = new Arrow(selectedNode.point.x, selectedNode.point.y, circle.point.x, circle.point.y);
+                                    canvasGroup.getChildren().add(arrow);
+                                    arrow.setId("arrow");
                                 }
-                                canvasGroup.getChildren().add(weight);
-                            } else if (unweighted) {
-                                weight.setText("1");
-                            }
-                            Shape line_arrow = null;
-                            Edge temp = null;
-                            if (undirected) {
-                                temp = new Edge(selectedNode.node, circle.node, Integer.valueOf(weight.getText()), edgeLine, weight);
-                                selectedNode.node.adjacents.add(new Edge(selectedNode.node, circle.node, Double.valueOf(weight.getText()), edgeLine, weight));
-                                circle.node.adjacents.add(new Edge(circle.node, selectedNode.node, Double.valueOf(weight.getText()), edgeLine, weight));
-                                edges.add(edgeLine);
-                                realEdges.add(selectedNode.node.adjacents.get(selectedNode.node.adjacents.size() - 1));
-                                realEdges.add(circle.node.adjacents.get(circle.node.adjacents.size() - 1));
-                                line_arrow = edgeLine;
 
-                            } else if (directed) {
-                                temp = new Edge(selectedNode.node, circle.node, Double.valueOf(weight.getText()), arrow, weight);
-                                selectedNode.node.adjacents.add(temp);
-                                edges.add(arrow);
-                                line_arrow = arrow;
-                                realEdges.add(temp);
+                                //Adds weight
+                                if (weighted) {
+                                    weight.setLayoutX(((selectedNode.point.x) + (circle.point.x)) / 2);
+                                    weight.setLayoutY(((selectedNode.point.y) + (circle.point.y)) / 2);
+
+                                    TextInputDialog dialog = new TextInputDialog("0");
+                                    dialog.setTitle(null);
+                                    dialog.setHeaderText("Enter Weight of the Edge :");
+                                    dialog.setContentText(null);
+
+                                    Optional<String> result = dialog.showAndWait();
+                                    if (result.isPresent()) {
+                                        weight.setText(result.get());
+                                    } else {
+                                        weight.setText("0");
+                                    }
+                                    canvasGroup.getChildren().add(weight);
+                                } else if (unweighted) {
+                                    weight.setText("1");
+                                }
+                                Shape line_arrow = null;
+                                Edge temp = null;
+                                if (undirected) {
+                                    temp = new Edge(selectedNode.node, circle.node, Integer.valueOf(weight.getText()), edgeLine, weight);
+                                    selectedNode.node.adjacents.add(new Edge(selectedNode.node, circle.node, Double.valueOf(weight.getText()), edgeLine, weight));
+                                    circle.node.adjacents.add(new Edge(circle.node, selectedNode.node, Double.valueOf(weight.getText()), edgeLine, weight));
+                                    edges.add(edgeLine);
+                                    realEdges.add(selectedNode.node.adjacents.get(selectedNode.node.adjacents.size() - 1));
+                                    realEdges.add(circle.node.adjacents.get(circle.node.adjacents.size() - 1));
+                                    line_arrow = edgeLine;
+
+                                } else if (directed) {
+                                    temp = new Edge(selectedNode.node, circle.node, Double.valueOf(weight.getText()), arrow, weight);
+                                    selectedNode.node.adjacents.add(temp);
+                                    edges.add(arrow);
+                                    line_arrow = arrow;
+                                    realEdges.add(temp);
+                                }
+                            } catch (NumberFormatException e) {
+                                System.out.println(e.getMessage());
                             }
 
                         }
@@ -345,7 +348,6 @@ public class SceneController implements Initializable, ChangeListener {
         if (st != null && st.getStatus() != Animation.Status.STOPPED)
             st.stop();
         if (st != null) st.getChildren().clear();
-        menuBool = false;
         selectedNode = null;
         calculated = false;
         System.out.println("IN CLEAR:" + circles.size());
